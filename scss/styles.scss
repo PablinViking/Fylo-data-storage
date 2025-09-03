@@ -18,7 +18,7 @@ body{
 
     @include mixins.view(950px){
         background-image: url("./images/bg-desktop.png");
-        background-size: 100%;
+        background-size: 100% 50%;
         background-position: bottom;
         background-attachment: fixed;
     }
@@ -213,4 +213,5 @@ main{
     &__a:hover{
         color: variables.$White;
     }
+
 }
