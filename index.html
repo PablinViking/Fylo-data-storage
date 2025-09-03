@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  
+  <title>Frontend Mentor | Fylo data storage component</title>
+
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main>
+    <!-- First section - Load files -->
+    <section class="load-section">
+      <img class="load-section__logo" src="images/logo.svg" alt="Fylo Logo">
+
+      <div class="load-section__buttons-section">
+
+        <div class="load-section__button">
+          <img class="load-section__button-icon" src="images/icon-document.svg" alt="Icon Document">
+        </div>
+
+        <div class="load-section__button">
+          <img class="load-section__button-icon" src="images/icon-folder.svg" alt="Icon Folder">
+        </div>
+
+        <div class="load-section__button">
+          <img class="load-section__button-icon" src="images/icon-upload.svg" alt="Icon Unpload">
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Second section - Progress bar -->
+    <section class="progress-section">
+      <p class="progress-section__p"><span class="progress-section--span01">Y</span>ou’ve used <span class="progress-section--span02">815 GB</span> of your storage</p>
+
+      <div class="progress-section__bar-container">
+        <div class="progress-section__progress">
+          <div class="progress-section__bar">
+            <div class="progress-section__ball"></div>
+          </div>
+        </div>
+        <div class="progress-section__bar-values">
+          <p class="progress-section__value">0 GB</p>
+          <p class="progress-section__value">1000 GB</p>
+        </div>
+      </div>
+
+      <!-- Float section - Space left -->
+      <div class="space-section">
+        <p class="space-section__p">185 </p><span class="space-section--span">GB LEFT</span>
+      </div>
+
+      <div class="space-section__triangul"></div>
+
+    </section>
+
+    
+  </main>
+  
+  <footer class="attribution">
+    Challenge by <a class="attribution__a" href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+    Coded by <a target="_blank" class="attribution__a" href="https://github.com/PablinViking">Pablo Boichenko</a>.
+  </footer>
+</body>
+</html>

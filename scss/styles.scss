@@ -1,0 +1,216 @@
+@use 'variables';
+@use 'mixins';
+
+*{
+    font-family: variables.$Principal-font;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background-image: url("./images/bg-mobile.png");
+    background-repeat: no-repeat;
+    background-size: 100%;
+    font-size: 14px;
+    background-color: variables.$Blue-950;
+
+    @include mixins.view(950px){
+        background-image: url("./images/bg-desktop.png");
+        background-size: 100%;
+        background-position: bottom;
+        background-attachment: fixed;
+    }
+}
+
+main{
+    margin: 127px 0 120px;
+    @include mixins.flex-direction-order(column,center,none);
+
+     @include mixins.view(950px){
+        @include mixins.flex-direction-order(row, flex-end,center);
+        margin: 225px 0 120px;
+     }
+
+     @include mixins.view(1024px){
+        margin: 295px 0 120px;
+     }
+
+     @include mixins.view(1280px){
+        margin: 280px 0 150px;
+     }
+
+     @include mixins.view(1366px){
+        margin: 265px 0 150px;
+     }
+
+     @include mixins.view(1440px){
+        margin: 289px 0 150px;
+     }
+}
+
+.load-section{
+    @include mixins.dimensions-bg-br(326px, 201px, variables.$Blue-850, 8px);
+    border-top-right-radius: 95px;
+    padding: 40px;
+    margin-bottom: 16px;
+
+    @include mixins.view(950px){
+        width: 350px;
+        margin: 0 30px 0 0;
+    }
+
+    &__logo{
+        margin-bottom: 32px;
+    }
+
+    // Buttons //
+    &__buttons-section{
+        @include mixins.flex-direction-order(row,center,none);
+    }
+
+    &__button{
+        width: 48px;
+        height: 48px;
+        background-color: variables.$Blue-950;
+        border-radius: 8px;
+        margin-right: 16px;
+        @include mixins.flex-direction-order(none,center,center);
+        transition: transform 200ms ease-out;
+    }
+
+    &__button:hover{
+        cursor: pointer;
+        background-color: variables.$Blue-200;
+        transform: scale(1.05 , 1.05);
+        box-shadow: 1px 1px 4px variables.$Blue-950;
+    }
+}
+
+.progress-section{
+    @include mixins.dimensions-bg-br(326px, 160px, variables.$Blue-850, 8px);
+    padding: 32px;
+    position: relative;
+
+    @include mixins.view(950px){
+        @include mixins.dimensions-bg-br(540px, 154px, none, none);
+        padding: 39px;
+    }
+
+    // Text of section //
+    &__p{
+        color: variables.$Blue-200;
+        font-size: 0.97em;
+        font-weight: 400;
+        text-align: center;
+        margin-bottom: 15px;
+
+        @include mixins.view(950px){
+            text-align: left;
+            font-size: 1em;
+        }
+    }
+
+    &--span01{
+        letter-spacing: 0.8px;
+    }
+
+    &--span02{
+        font-weight: 600;
+    }
+
+    // Progress Bar //
+    &__progress{
+        @include mixins.dimensions-bg-br(100%, 20px, variables.$Blue-bg-bar, 25px);
+        padding: 2px;
+        margin-bottom: 10px
+    }
+
+    &__bar{
+        @include mixins.dimensions-bg-br(75%, 100%, none, 25px);
+        background: linear-gradient(to right, variables.$Fisrt-color, variables.$Second-color);
+        border: 1px solid variables.$Blue-950;
+        box-shadow: 0 0 4px variables.$Blue-950;
+        overflow: hidden;
+        padding: 2px;
+        position: relative;
+    }
+
+    &__ball{
+        @include mixins.dimensions-bg-br(10px, 10px, variables.$White,50%);
+        position: absolute;
+        right: 2px;
+    }
+
+    &__ball:hover{
+        cursor: pointer;
+    }
+
+    &__bar-values{
+        @include mixins.flex-direction-order(row, center, space-between);
+    }
+
+    // Fixed Values //
+    &__value{
+        color: variables.$Blue-200;
+        font-size: 0.9em;
+        font-weight: 600;
+    }
+}
+
+.space-section{
+    position: absolute;
+    bottom: -36px;
+    right: 73px;
+    @include mixins.dimensions-bg-br(179px,72px,variables.$White,8px);
+    @include mixins.flex-direction-order(none,center, space-between);
+    padding: 0 25px;
+
+    @include mixins.view(950px){
+        bottom: unset;
+        top: -47px;
+        right: 39px;
+        border-bottom-right-radius: 0;
+    }
+
+    &__p{
+        font-size: 2.7em;
+        font-weight: 700;
+        color: variables.$Blue-950;
+    }
+
+    &--span{
+        font-size: 0.75rem;
+        font-weight: 700;
+        color: variables.$Grayish-Blue;
+        letter-spacing: 1px;
+    }
+
+    &__triangul{
+        @include mixins.view(950px){
+            width: 44px;
+            height: 44px;
+            border: 22px solid;
+            border-color: transparent variables.$White transparent transparent;
+            position: absolute;
+            right: 39px;
+            top: 3px;
+        }
+    }
+}
+
+.attribution{
+    font-size: 11px;
+    text-align: center;
+    color: variables.$Blue-200;
+    margin-bottom: 15px;
+
+    &__a{ 
+        color: variables.$Grayish-Blue; 
+    }
+
+    &__a:hover{
+        color: variables.$White;
+    }
+}

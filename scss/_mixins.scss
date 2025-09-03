@@ -1,0 +1,21 @@
+@use 'variables';
+
+@mixin flex-direction-order($direction, $align-items, $justify-content){
+    display: flex;
+    flex-direction: $direction;
+    align-items: $align-items;
+    justify-content: $justify-content;
+}
+
+@mixin dimensions-bg-br($width, $height, $bg, $br){
+    width: $width;
+    height: $height;
+    background-color: $bg;
+    border-radius: $br;
+}
+
+@mixin view($width){
+    @media screen and (min-width:$width) {
+        @content
+    }
+}
